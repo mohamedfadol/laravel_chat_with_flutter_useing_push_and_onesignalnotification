@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "01f94576-c6ae-4e81-8d87-231c2e1b55db",
+		"name": "auth Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6071541",
+		"_collection_link": "https://speeding-trinity-720406.postman.co/workspace/laravel_chat_with_flutter~f8a95a15-9c41-461f-b829-4fac27eca48f/collection/6071541-01f94576-c6ae-4e81-8d87-231c2e1b55db?action=share&source=collection_link&creator=6071541"
+	},
+	"item": [
+		{
+			"name": "login Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "tapo@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_uri_api}}/auth/login",
+					"host": [
+						"{{base_uri_api}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "tapo2@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "tapo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_uri_api}}/auth/register",
+					"host": [
+						"{{base_uri_api}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginwithtoken Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|SdQImWhwjFZ1rK3dMtNdjvmTu36m7kvBgFRB0MVRc58b1815",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_uri_api}}/auth/login-with-token",
+					"host": [
+						"{{base_uri_api}}"
+					],
+					"path": [
+						"auth",
+						"login-with-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_uri_api}}i/auth/logout",
+					"host": [
+						"{{base_uri_api}}i"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_uri_api",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "2|1BxuiymVUCtjs99hhtg0HNMbu2CoQv0eb8YgIKcFdd13a560",
+			"type": "string"
+		}
+	]
+}

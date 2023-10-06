@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "5acda681-19f1-46d9-b85b-fdb138d59ce3",
+		"name": "chatMessages Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6071541",
+		"_collection_link": "https://speeding-trinity-720406.postman.co/workspace/laravel_chat_with_flutter~f8a95a15-9c41-461f-b829-4fac27eca48f/collection/6071541-5acda681-19f1-46d9-b85b-fdb138d59ce3?action=share&source=collection_link&creator=6071541"
+	},
+	"item": [
+		{
+			"name": "get chat messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|0pLEZvSWKw2a8VOri1zvnomIAMdTYkEwZl5BV0BGbece7028",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_uri_api}}/chat_message?chat_id=1&page=1",
+					"host": [
+						"{{base_uri_api}}"
+					],
+					"path": [
+						"chat_message"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create chat messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|0pLEZvSWKw2a8VOri1zvnomIAMdTYkEwZl5BV0BGbece7028",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "chat_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "hi mohamed",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_uri_api}}/chat_message",
+					"host": [
+						"{{base_uri_api}}"
+					],
+					"path": [
+						"chat_message"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_uri_api",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}
