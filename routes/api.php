@@ -17,7 +17,7 @@ use App\Http\Controllers\ChatMessageController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+Broadcast::routes(['middleware'=> ['auth:sanctum']]);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
